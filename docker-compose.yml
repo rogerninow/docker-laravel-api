@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 services:
   app:
     build:
@@ -6,7 +6,7 @@ services:
         user: rogerninow
         uid: 1000
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
     image: ${APP_NAME}
     container_name: ${APP_NAME}-app
     restart: unless-stopped
@@ -15,7 +15,7 @@ services:
       - 9000:9000
     volumes:
       - ./:/var/www
-      - ./docker-compose/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
     networks:
       - app-network
 
@@ -45,7 +45,7 @@ services:
       - 80:80
     volumes:
       - ./:/var/www
-      - ./docker-compose/nginx:/etc/nginx/conf.d
+      - ./docker/nginx:/etc/nginx/conf.d
     networks:
       - app-network
 

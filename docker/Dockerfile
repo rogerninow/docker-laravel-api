@@ -1,10 +1,9 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 # Arguments defined in docker-compose.yml
 ARG user
 ARG uid
 
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     curl \
