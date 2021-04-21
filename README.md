@@ -12,7 +12,6 @@ You can change the default ports on docker-compose.yml.
 1. Change "fastcgi_pass" parameter in `/docker/nginx/app.conf`; 
 1. Run `docker-compose build app`;
 1. Run `docker-compose up`;
-1. Create and setup database;
 1. Run `docker-compose exec app composer install`;
 1. Run `docker-compose exec app php artisan migrate`;
 1. Run `docker-compose exec app php artisan db:seed`;
